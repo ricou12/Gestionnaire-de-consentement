@@ -1195,21 +1195,35 @@ AKqooXR2KGe2AAAAAElFTkSuQmCC
 </svg>
 `
 
+/* 
+La législation porte le délai de validité du consentement au dépôt des Cookies à 13 mois au maximum.
+ À l'expiration de ce délai, le consentement devra être à nouveau recueilli.
+ Définir la durée de vie en jour soit 365 pour 12 mois.
+*/
+const cookieLifeTime = "365";
+
 const CookiesList = [
-    /* EXEMPLE POUR UNE PREMIERE CATEGORIE ORGANISER EN FONCTION DES PREFERENCES D AFFICHAGE */
-    /*
+    /* 
+    UNE PAGE SERA CREE POUR CHAQUE CATEGORIE DE COOKIE 
+    AJOUTER UNE CATEGORIE ET REDIGER LE CONTENU
+    */
+
+    /* EXEMPLE DECOMMENTER POUR TESTER
     {
-        categoryName: "Vos préférences",
-        categoryTitle: "Améliorer l'expérience utilisateur, c’est important !",
-        categoryDescription: "Ces cookies permettent à notre site de se rappeler si vous avez déjà visité le site ou les choix que vous faites (comme votre langue, la région ou les préférences) pour offrir une expérience en ligne plus personnalisée.",
+        categoryName: "Ex: Vos préférences",
+        categoryTitle: "Ex: Améliorer votre expérience utilisateur",
+        categoryDescription: "Ex: Ces cookies permettent à notre site de se rappeler si vous avez déjà visité le site ou les choix que vous faites (comme votre langue, la région ou les préférences) pour offrir une expérience en ligne plus personnalisée.",
+        // AJOUTER LE OU LES SCRIPTS POUR CETTE CATEORIE
         scripts: [{
-                id: "cook01Interne", // CET IDENTIFIANT DOIT ETRE UNIQUE DANS LE TABLEAU
-                name: "Nom de cookie 01",
-                description: "Description du cookie 01",
+                // CET IDENTIFIANT DOIT ETRE UNIQUE DANS LE TABLEAU
+                id: "Ex: cookIntern01", 
+                name: "Ex: titre cookie 01",
+                description: "EX: Description cookie 01",
+                // LA PROPRIETE CHECKED DOIT TOUJOURS ETRE INITIALISEE A FALSE
                 checked: false,
-                script_src: "Chaine de caractere pour la source du script",
+                script_src: "Ex: Chaine de caractère pour la source du script",
                 script_config: `
-                   Si une config existe pour le script`
+                   Ex: Si une config existe pour le script`
             },
             {
                 ...
@@ -1221,21 +1235,24 @@ const CookiesList = [
         categoryName: "Statistiques et audience",
         categoryTitle: "Compter nos calories, c’est important !",
         categoryDescription: "Nous souhaitons gagner en popularité ! Et pour cette raison, la plupart des sites internet mesurent leur audience en utilisant des solutions spécialisées.",
+        // AJOUTER LE OU LES SCRIPTS POUR CETTE CATEORIE
         scripts: [{
+                // CET IDENTIFIANT DOIT ETRE UNIQUE DANS LE TABLEAU
                 id: "googleAnalytics",
                 name: "Google Analytics",
                 description: "Permet d'analyser les statistiques de consultation de notre site",
+                // LA PROPRIETE CHECKED DOIT TOUJOURS ETRE INITIALISEE A FALSE
                 checked: false,
-                script_src: "https://www.googletagmanager.com/gtag/js?id=UA-179257014-1",
+                script_src: "https://www.googletagmanager.com/gtag/js?id=UA-000000000-1",
                 script_config: `
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
                             gtag('js', new Date());
-                            gtag('config', 'UA-179257014-1');`,
+                            gtag('config', 'UA-000000000-1');`,
             },
         ],
     },
-    // /* EXAMPLE N°2
+    /* EXAMPLE N°2
     {
         categoryName: "Annonces personnalisées",
         categoryTitle: "Restons connectés",
@@ -1247,19 +1264,19 @@ const CookiesList = [
                 checked: false,
                 script_src: "https://static.hotjar.com/c/hotjar-blabla.js?sv=7",
             },
-            {
-                id: "nadiatchah",
-                name: "Nadia  tchat",
-                description: "Permet d'obtenir tout les derniers potins de la Région sud",
-                checked: false,
-                script_src: "",
-            },
         ],
     },
-    // */
+    */
 ]
 
-// <!-- GESTION DES COOKIES avec JS -->
+//  GESTION DES COOKIES avec JS -->
+/* 
+L’option samesite empêche le navigateur d’envoyer un cookie lors d’une requête cross-site.
+Cette option offre une bonne protection contre les attaques de type XSRF.
+
+L’option secure permet d’indiquer qu’un cookie doit être envoyé uniquement via HTTPS et ne
+ pas l’être via HTTP. Cette option est très utile si un cookie possède des données sensibles qui ne doivent pas être envoyées sans encryptage. 
+*/
 function createCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -1267,7 +1284,9 @@ function createCookie(name, value, days) {
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + value + expires + "; path=/";
+    document.cookie = name + "=" + value + expires + "; path=/" + "; SameSite=Strict; secure";
+    console.log(document.cookie)
+
 }
 
 function readCookie(name) {
@@ -1389,7 +1408,7 @@ const loadFirstPage = () => {
                     writeContentCookie += ',' +cookieItem.id
                 });
             });
-            createCookie('cookie-notice-dismissed', writeContentCookie, 31);
+            createCookie('cookie-notice-dismissed', writeContentCookie, cookieLifeTime);
             document.getElementById('cookie-root').style.display = 'none';
             // location.reload();
         }, 1000);
@@ -1399,7 +1418,7 @@ const loadFirstPage = () => {
     document.getElementById('cookie-notice-reject').addEventListener("click", () => {
         document.getElementById('cookie-root').style.animation = "fadeOutDown 1s";
         setTimeout(function () {
-            createCookie('cookie-notice-dismissed', "rejected", 31);
+            createCookie('cookie-notice-dismissed', "rejected", cookieLifeTime);
             document.getElementById('cookie-root').style.display = 'none';
             // location.reload();
         }, 1000);
@@ -1498,7 +1517,7 @@ const loadPages = (value) => {
                             }
                         })
                     });
-                    createCookie('cookie-notice-dismissed', writeContentCookie, 31);
+                    createCookie('cookie-notice-dismissed', writeContentCookie, cookieLifeTime);
                     document.getElementById('cookie-root').style.display = 'none';
                     // location.reload();
                 }, 1000);
