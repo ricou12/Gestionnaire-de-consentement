@@ -1,3 +1,39 @@
+const CookiesList = [
+    /* 
+    UNE PAGE SERA CREE POUR CHAQUE CATEGORIE DE COOKIE 
+    AJOUTER UNE CATEGORIE ET REDIGER LE CONTENU
+    */
+    {
+        categoryName: "Statistiques et audience",
+        categoryTitle: "Compter nos calories, c’est important !",
+        categoryDescription: "Nous souhaitons gagner en popularité ! Et pour cette raison, la plupart des sites internet mesurent leur audience en utilisant des solutions spécialisées.",
+        // AJOUTER LE OU LES SCRIPTS POUR CETTE CATEORIE
+        scripts: [
+            {
+                // CET IDENTIFIANT DOIT ETRE UNIQUE DANS LE TABLEAU
+                id: "googleAnalytics",
+                name: "Google Analytics",
+                description: "Permet d'analyser les statistiques de consultation de notre site",
+                // LA PROPRIETE CHECKED DOIT TOUJOURS ETRE INITIALISEE A FALSE
+                checked: false,
+                script_src: "https://www.googletagmanager.com/gtag/js?id=UA-000000000-1",
+                script_config: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'UA-000000000-1');`,
+            },
+        ],
+    },
+]
+
+/* 
+La législation porte le délai de validité du consentement au dépôt des Cookies à 13 mois au maximum.
+ À l'expiration de ce délai, le consentement devra être à nouveau recueilli.
+ Définir la durée de vie en jour soit 365 pour 12 mois.
+*/
+const cookieLifeTime = "365";
+
 const svg = `
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -1194,80 +1230,6 @@ AKqooXR2KGe2AAAAAElFTkSuQmCC
   </g>
 </svg>
 `
-
-/* 
-La législation porte le délai de validité du consentement au dépôt des Cookies à 13 mois au maximum.
- À l'expiration de ce délai, le consentement devra être à nouveau recueilli.
- Définir la durée de vie en jour soit 365 pour 12 mois.
-*/
-const cookieLifeTime = "365";
-
-const CookiesList = [
-    /* 
-    UNE PAGE SERA CREE POUR CHAQUE CATEGORIE DE COOKIE 
-    AJOUTER UNE CATEGORIE ET REDIGER LE CONTENU
-    */
-
-    /* EXEMPLE DECOMMENTER POUR TESTER
-    {
-        categoryName: "Ex: Vos préférences",
-        categoryTitle: "Ex: Améliorer votre expérience utilisateur",
-        categoryDescription: "Ex: Ces cookies permettent à notre site de se rappeler si vous avez déjà visité le site ou les choix que vous faites (comme votre langue, la région ou les préférences) pour offrir une expérience en ligne plus personnalisée.",
-        // AJOUTER LE OU LES SCRIPTS POUR CETTE CATEORIE
-        scripts: [{
-                // CET IDENTIFIANT DOIT ETRE UNIQUE DANS LE TABLEAU
-                id: "Ex: cookIntern01", 
-                name: "Ex: titre cookie 01",
-                description: "EX: Description cookie 01",
-                // LA PROPRIETE CHECKED DOIT TOUJOURS ETRE INITIALISEE A FALSE
-                checked: false,
-                script_src: "Ex: Chaine de caractère pour la source du script",
-                script_config: `
-                   Ex: Si une config existe pour le script`
-            },
-            {
-                ...
-            },
-        ],
-    },
-    */
-    {
-        categoryName: "Statistiques et audience",
-        categoryTitle: "Compter nos calories, c’est important !",
-        categoryDescription: "Nous souhaitons gagner en popularité ! Et pour cette raison, la plupart des sites internet mesurent leur audience en utilisant des solutions spécialisées.",
-        // AJOUTER LE OU LES SCRIPTS POUR CETTE CATEORIE
-        scripts: [{
-                // CET IDENTIFIANT DOIT ETRE UNIQUE DANS LE TABLEAU
-                id: "googleAnalytics",
-                name: "Google Analytics",
-                description: "Permet d'analyser les statistiques de consultation de notre site",
-                // LA PROPRIETE CHECKED DOIT TOUJOURS ETRE INITIALISEE A FALSE
-                checked: false,
-                script_src: "https://www.googletagmanager.com/gtag/js?id=UA-000000000-1",
-                script_config: `
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-                            gtag('config', 'UA-000000000-1');`,
-            },
-        ],
-    },
-    /* EXAMPLE N°2
-    {
-        categoryName: "Annonces personnalisées",
-        categoryTitle: "Restons connectés",
-        categoryDescription: "Quand vous quittez notre site, il est possible de prolonger l’expérience. Mais parce qu’il est hors de question de polluer votre navigation, ces cookies s’assurent à ce qu’on vous envoie uniquement des messages non-intrusifs et adaptés à votre profil.",
-        scripts: [{
-                id: "idTwitter",
-                name: "Twitter",
-                description: "identifie les visiteurs en provenace de Twitter",
-                checked: false,
-                script_src: "https://static.hotjar.com/c/hotjar-blabla.js?sv=7",
-            },
-        ],
-    },
-    */
-]
 
 //  GESTION DES COOKIES avec JS -->
 /* 

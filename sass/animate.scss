@@ -1,0 +1,22 @@
+@include auto-prefixer__keyframes (fadeOutDown) {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        @include auto-prefixer__property(transform, translate3d(0, 100%, 0), webkit o ms);
+    }
+}
+
+@include auto-prefixer__keyframes (fadeInLeft) {
+    from {
+        opacity: 0;
+        @include auto-prefixer__property(transform, translate3d(-100%, 0, 0), webkit o ms);
+    }
+
+    to {
+        opacity: 1;
+        @include auto-prefixer__property(transform, translate3d(0, 0, 0), webkit o ms);
+    }
+}
