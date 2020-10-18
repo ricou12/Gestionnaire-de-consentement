@@ -1,8 +1,8 @@
 # Gestionnaire de consentement
 Sauvegarder les paramètres de confidentialité
-## [VOIR LA DEMO](https://ricou12.github.io/Gestionnaire-de-consentement/)
+## [LANCER LA DEMO](https://ricou12.github.io/Gestionnaire-de-consentement/)
 
-
+##
 Ajouter dans vos pages: le code HTML, le fichier CSS et le script JS ci-dessous.
 
     <head>
@@ -19,13 +19,14 @@ Ajouter dans vos pages: le code HTML, le fichier CSS et le script JS ci-dessous.
   
 
 
-### Usages:
-Créer des ***catégories*** de cookies et ajouter ***le(s) script(s)*** dans le tableau const CookiesList = [] au début du fichier cookiesManager.js.
+### Usages: 
+Créer des **catégories** de cookies et ajouter **le(s) script(s)** dans ***le tableau const CookiesList = []*** au début du fichier cookiesManager.js.
 Une page sera créée pour chaque catégorie de cookies.
 
-EXEMPLE
+EXEMPLE de catégorie
 
     const CookiesList = [
+        // Votre configuration
         {
             categoryName: "Statistiques et audience",
             categoryTitle: "Compter nos calories, c’est important !",
@@ -58,10 +59,3 @@ EXEMPLE
 *Définission de la durée de vie du cookie en jours.*
     
     const cookieLifeTime = "365";
-    
-
-  
- 
-  
-
-
