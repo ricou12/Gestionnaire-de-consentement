@@ -1,11 +1,8 @@
 # Gestionnaire de consentement
-Sauvegarder les paramètres de confidentialité
+Sauvegarder le consentement aux cookies de chaque utilisateurs.
+
 ## [LANCER LA DEMO](https://ricou12.github.io/Gestionnaire-de-consentement/)
 
-<<<<<<< HEAD
-## [VOIR LA DEMO](https://ricou12.github.io/Gestionnaire-de-consentement/)
-
-=======
 ##
 Ajouter dans vos pages: le code HTML, le fichier CSS et le script JS ci-dessous.
 
