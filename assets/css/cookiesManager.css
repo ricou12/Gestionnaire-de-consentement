@@ -113,17 +113,35 @@
   overflow: hidden;
   outline: 0;
   font-family: 'Roboto', sans-serif;
+  color: white;
   /* Fading exits */ }
   .cookiesManager__box svg {
     position: absolute;
     z-index: -1;
     top: 2px;
     right: 5px; }
+  .cookiesManager__box .title {
+    padding-top: .3rem; }
+  .cookiesManager__box .subtitle {
+    padding-top: .7rem;
+    font-weight: bold; }
+  .cookiesManager__box .comments {
+    padding-top: .7rem;
+    text-align: justify; }
+  .cookiesManager__box .boxButton {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .7rem; }
   .cookiesManager__box .contentCookies {
     border: 1px solid #2e2a2a;
-    padding: 5px;
-    overflow: scroll;
-    max-height: 150px; }
+    padding: .5rem;
+    margin-bottom: 1.2rem;
+    overflow-y: scroll;
+    max-height: 170px; }
+  .cookiesManager__box .mentions {
+    font-weight: bold; }
+  .cookiesManager__box .copyright {
+    margin-top: .8rem; }
   .cookiesManager__box .ftsz-10 {
     font-size: 1em; }
   .cookiesManager__box .ftsz-9 {

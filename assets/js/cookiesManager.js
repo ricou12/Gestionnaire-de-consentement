@@ -1340,16 +1340,16 @@ const loadFirstPage = () => {
             `
             <section>
                 ${svg}
-                <h4 class="txt-color--orange ftsz-8">Bonjour c'est nous...</h4>
-                <h4 class="font-weight-bold txt-color--raspberry ftsz-10 pt-2"> les Cookies !</h4>
-                <p class="ftsz-8 text-justify pt-2">En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour réaliser des statistiques de visites. Vous pourrez à tout moment revoir vos choix en utilisant le lien "Modifier mes choix cookies" en bas de page du site.</p>
-                <div class="d-flex justify-content-between mb-2">
+                <h4 class="title txt-color--orange ftsz-9">Bonjour c'est nous...</h4>
+                <h4 class="subtitle txt-color--raspberry ftsz-10"> les Cookies !</h4>
+                <p class="comments ftsz-8">En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour réaliser des statistiques de visites. Vous pourrez à tout moment revoir vos choix en utilisant le lien "Modifier mes choix cookies" en bas de page du site.</p>
+                <div class="boxButton">
                     <a href="#" class="btn btn-outline-light ftsz-8 font-weight-bold" id="cookie-notice-reject">Non merci</a>
                     <a href="#" class="btn btn-outline-light ftsz-8 font-weight-bold" id="cookies-choice">Je choisis</a>
                     <a href="#" class="btn btn-outline-light ftsz-8 font-weight-bold" id="cookie-notice-accept">Ok pour moi</a>
                 </div>
-                <a href="{{ '/mentions-legales.html' | relative_url }}" class="text-center text-info mt-3 ftsz-8 font-weight-bold">Notre politique de confidentialité</a>
-                <p class="copyright ftsz-8 text-right text-dark mt-3">Copyright &copy; 2020  Eric Lanza</p>
+                <a href="{{ '/mentions-legales.html' | relative_url }}" class="mentions text-center text-info ftsz-8">Notre politique de confidentialité</a>
+                <p class="copyright ftsz-8 text-right text-dark">Copyright &copy; 2020  Eric Lanza</p>
             </section>
             `
         )
@@ -1398,14 +1398,14 @@ const loadFonctionsEssentielles = () => {
         return `
         <section>
             ${svg}
-            <h4 class="txt-color--orange ftsz-9">Fonctionnalités essentielles</h4>
-            <h4 class="font-weight-bold txt-color--raspberry ftsz-10 pt-2">Les indispensables</h4>
-            <p class="ftsz-8 text-justify pt-2">Ils contribuent à rendre un site Web utilisable en activant des fonctions de base telles que la définition de vos préférences de confidentialité, la navigation de page ou l'accès aux zones sécurisées du site Web. Ces cookies ne peuvent pas être désactivés.</p>
-            <div class="d-flex justify-content-between mt-3">
+            <h4 class="title txt-color--orange ftsz-9">Fonctionnalités essentielles</h4>
+            <h4 class="subtitle txt-color--raspberry ftsz-10">Les indispensables</h4>
+            <p class="comments ftsz-8">Ils contribuent à rendre un site Web utilisable en activant des fonctions de base telles que la définition de vos préférences de confidentialité, la navigation de page ou l'accès aux zones sécurisées du site Web. Ces cookies ne peuvent pas être désactivés.</p>
+            <div class="boxButton">
                 <a href="#" class="btn btn-outline-light ftsz-8 font-weight-bold" id="previewPage">Retour</a>
                 <a href="#" class="btn btn-outline-light ftsz-8 font-weight-bold" id="nextPage">Suivant</a>
             </div>
-            <p class="copyright ftsz-8 text-right text-dark mt-3">Copyright &copy; 2020 Eric Lanza</p>
+            <p class="copyright ftsz-8 text-right text-dark">Copyright &copy; 2020 Eric Lanza</p>
         </section>
         `
     }
@@ -1443,18 +1443,18 @@ const loadPages = (value) => {
             `
                 <section>
                     ${svg}
-                    <h4 class="txt-color--orange ftsz-9">${thisCategory.categoryName}</h4>
-                    <h4 class="font-weight-bold txt-color--raspberry ftsz-10 pt-2">${thisCategory.categoryTitle}</h4>
-                    <p class="ftsz-8 text-justify pt-2">${thisCategory.categoryDescription}</p>
+                    <h4 class="title txt-color--orange ftsz-9">${thisCategory.categoryName}</h4>
+                    <h4 class="subtitle txt-color--raspberry ftsz-10">${thisCategory.categoryTitle}</h4>
+                    <p class="comments ftsz-8">${thisCategory.categoryDescription}</p>
                     <div class="contentCookies">
                         ${createFormCheckForCookie(thisCategory.scripts)}
                     </div>
-                    <div class="d-flex justify-content-between mt-3">
+                    <div class="boxButton">
                         <a href="#" class="btn btn-outline-light ftsz-8 font-weight-bold" id="previewPage">Retour</a>
                         <a href="#" class="btn btn-outline-light ftsz-8 font-weight-bold" id="acceptAll">J'accepte tout</a>
                         ${createButton()}
                     </div>
-                    <p class="copyright ftsz-8 text-right text-dark mt-3">Copyright &copy; 2020 Ricou</p>
+                    <p class="copyright ftsz-8 text-right text-dark">Copyright &copy; 2020  Eric Lanza</p>
                 </section>
                 `
         )
