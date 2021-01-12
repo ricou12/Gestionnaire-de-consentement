@@ -1,5 +1,13 @@
-# Gestionnaire de consentement
-Sauvegarder le consentement aux cookies de chaque utilisateurs.
+# Un gestionnaire de consentement (RGPD) en javascript 
+Lorsqu'ils visitent un site web, les utilisateurs doivent être informés et donner leur consentement préalablement au dépôt ou la lecture de cookies ou autres traceurs.
+La mise en place de la Règlementation Générale pour la Protection des Données.
+
+### Comment recueillir un consentement valide ?
+    Informer l’utilisateur
+    Permettre à l’utilisateur de consentir par un acte positif clair
+    Permettre à l’utilisateur de faire un choix par finalité
+    Permettre à l’utilisateur d’exercer ses choix avec le même degré de simplicité
+    Permettre à l’utilisateur de revenir sur sa décision à tout moment
 
 ## [LANCER LA DEMO](https://ricou12.github.io/Gestionnaire-de-consentement/)
 
@@ -57,7 +65,7 @@ EXEMPLE de catégorie
     * La législation porte le délai de validité du consentement au dépôt des Cookies à 13 mois au maximum.
     * À l'expiration de ce délai, le consentement devra être à nouveau recueilli.
  
-*Définission de la durée de vie du cookie en jours.*
+*Définition de la durée de vie du cookie en jours.*
     
     const cookieLifeTime = "365";
 >>>>>>> 82c8c28f92d1f138aa129c0b25959e4f74a26694
