@@ -1,7 +1,7 @@
 # Un gestionnaire de consentement (RGPD) en javascript.
 Lorsqu'ils visitent un site web, les utilisateurs doivent être informés et donner leur consentement préalablement au dépôt ou la lecture de cookies ou autres traceurs.
 
-## La mise en place de la Règlementation Générale pour la Protection des Données
+## Mise en place de la Règlementation Générale pour la Protection des Données
 ### Comment recueillir un consentement valide ?
     Informer l’utilisateur
     Permettre à l’utilisateur de consentir par un acte positif clair
